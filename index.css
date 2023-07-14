@@ -1,0 +1,30 @@
+body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("img/background.png");
+    color: #fefefe;
+    font-size: 36;
+    
+    font-size: 130%;
+    text-align: center;
+}
+
+a {
+    color: #bababa;
+}
+
+ul {
+    list-style-type: none
+}
+
+h1 {
+    background: linear-gradient(rgb(255, 0, 0), rgb(133, 133, 133));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+	-webkit-background-clip: text;
+}
+
+h2 {
+    background: linear-gradient(rgb(255, 0, 0), rgb(133, 133, 133));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+	-webkit-background-clip: text;
+}

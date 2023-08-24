@@ -27,7 +27,9 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-
+footer {
+	display: block;
+}
 h1 {
     background: linear-gradient(rgb(255, 0, 0), rgb(255, 133, 133));
     -webkit-text-fill-color: transparent;

@@ -28,7 +28,10 @@ ul {
     padding: 0;
 }
 footer {
-	display: block;
+	text-align: center;
+	padding: 3px;
+	background-color: linear-gradient(rgb(129, 8, 150), rgb(184, 11, 214));
+	color: white;
 }
 h1 {
     background: linear-gradient(rgb(255, 0, 0), rgb(255, 133, 133));

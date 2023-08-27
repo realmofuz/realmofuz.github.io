@@ -17,6 +17,7 @@
     height: fit-content;
 
     background-size: cover;
+    overflow: hidden;
 }
 
 a {

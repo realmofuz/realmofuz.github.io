@@ -20,7 +20,9 @@
     background-size: cover;
     overflow: hidden;
 }
-
+a {
+    color: #bababa;
+}
 header a {
     color: #bababa;
     transition: border 200ms, color 200ms;

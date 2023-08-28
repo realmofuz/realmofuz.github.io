@@ -21,17 +21,17 @@
     overflow: hidden;
 }
 
-a {
+header a {
     color: #bababa;
-    transition: border 100ms, color 100ms;
+    transition: border 200ms, color 200ms;
     text-decoration: none;
     padding: 2px 10px;
 }
-a:hover {
+header a:hover {
     border-bottom: 3px solid white;
     color: white;
 }
-a[href='#'] {
+header a[href='#'] {
     border-bottom: 3px solid white;
     color: white;
 }

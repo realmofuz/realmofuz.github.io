@@ -6,7 +6,6 @@
     
     font-size: 130%;
     text-align: left;
-    text-align: right;
     padding.left: 70px;
 
     position: absolute;
@@ -62,6 +61,7 @@ footer {
 }
 h1 {
     background: linear-gradient(rgb(255, 0, 0), rgb(255, 133, 133));
+    text-align: center;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 	-webkit-background-clip: text;
@@ -69,6 +69,7 @@ h1 {
 
 h2 {
     background: linear-gradient(rgb(255, 0, 0), rgb(255, 133, 133));
+    text-align: center;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 	-webkit-background-clip: text;

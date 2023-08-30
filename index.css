@@ -6,6 +6,7 @@
     
     font-size: 130%;
     text-align: left;
+    text-align: right;
     padding.left: 70px;
 
     position: absolute;
@@ -20,14 +21,6 @@
 
     background-size: cover;
     overflow: hidden;
-}
-span {
-	display: inline;
-	width: 500px;
-	height: 1000px;
-	padding: 10px;
-	border: 1px solid yellow;
-	background-color: dark purple;
 }
 a {
     color: #bababa;

@@ -42,10 +42,10 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-.button {
+button {
 	transition-duration: 0.4s;
 }
-.button:hover {
+button:hover {
 	background-color: rgb(168, 168, 168);
 	color: black;
 }

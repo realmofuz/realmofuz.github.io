@@ -36,7 +36,85 @@
     }
     </style>
   </head>
-  <body>
+  <body class="page">
     <header></header>
     <h1>Xyraith Documentation</h1>
+    <h2>Syntax</h2>
+    <p>To define a event, use:</p>
+    <p>(event join (</p>
+    <p>;; commands here</p>
+    <p>))</p>
+    <br>
+    <p>The parenthesis around the event are optional.</p>
+    <p>You can also use other events, like:</p>
+    <br>
+    <p>join - Runs when a player joins the server</p>
+    <p>quit - Runs when a player leaves the server</p>
+    <p>tick - Runs every tick for a player</p>
+    <br>
+    <br>
+    <p>Command syntax goes like so:</p>
+    <p>(commandName {args})</p>
+    <p>For example: (player.sendMessage "hi!")</p>
+    <p>The parenthesis around the command are optional aswell, though are automatically terminated by</p>
+    <p>a new line.</p>
+    <p>Here's how to represent each currently supported datatype:</p>
+    <br>
+    <p>Number - A standard number. (1, 2.76, -12.1)</p>
+    <p>String - Text wrapped in quotation marks ("hi there!", "ok")</p>
+    <p>Location - A special command (loc {x} {y} {z} [pitch] [yaw]) ({} = required, [] = optional)</p>
+    <br>
+    <br>
+    <p>For example: (event join ( (player.sendMessage "hi there!") (world.setBlock (loc 0 50 0) "minecraft:stone") ))</p>
+    <p>With that out of the way...</p>
+    <h2>Xyraith Command Documentation</h2>
+    <h3>console.log</h3>
+    <p>Log a message to the console.</p>
+    <br>
+    <p><b>Command Parameters</b></p>
+    <br>
+    <p><b>String</b> - String to print</p>
+    <br>
+    <br>
+    <h3>add</h3>
+    <p>Sum a series of numbers.</p>
+    <br>
+    <p><b>Command Parameters</b></p>
+    <br>
+    <p><b>Number(s)</b> - Numbers to add</p>
+    <br>
+    <br>
+    <h3>sub</h3>
+    <p>Subtract two numbers from each other.</p>
+    <br>
+    <p><b>Command Parameters</b></p>
+    <br>
+    <p><b>Number</b> - Left hand side</p>
+    <p><b>Number</b> - Right hand side</p>
+    <br>
+    <br>
+    <h3>mul</h3>
+    <p>Multiply a series of numbers</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <footer></footer>
   </body>

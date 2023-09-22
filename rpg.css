@@ -1,5 +1,5 @@
 .page {
-    color: #c79304;
+    color: rgb(199, 147, 4);
     font-size: 36;
     font-family: sans-serif;
     font-size: 130%;
@@ -39,10 +39,10 @@
     overflow: hidden;
 }
 a {
-    color: #c79304;
+    color: rgb(199, 147, 4);
 }
 header a {
-    color: #c79304;
+    color: rgb(199, 147, 4);
     transition: border 200ms, color 200ms;
     text-decoration: none;
     padding: 2px 10px;
@@ -54,7 +54,7 @@ header a:hover {
 }
 header a[href='#'] {
     border-bottom: 3px solid white;
-    color: white;
+    color: rgb(199, 147, 4);
 }
 ul {
     list-style-type: none;
@@ -71,7 +71,7 @@ footer {
 	text-align: center;
 	padding: 3px;
 	background-color: linear-gradient(rgb(129, 8, 150), rgb(184, 11, 214));
-	color: #c79304;
+	color: rgb(199, 147, 4);
 	position: absolute;
 	bottom: 0;
 	width: 100%;

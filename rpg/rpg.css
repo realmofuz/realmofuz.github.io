@@ -19,7 +19,17 @@
     background-size: cover;
     overflow: hidden;
 }
-
+header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+header div {
+    flex: 1;
+}
 a {
     color: rgb(199, 147, 4);
 }
@@ -36,7 +46,7 @@ header a:hover {
 }
 header a[href='#'] {
     border-bottom: 3px solid white;
-    color: rgb(199, 147, 4);
+    color: white;
 }
 ul {
     list-style-type: none;

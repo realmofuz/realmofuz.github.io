@@ -28,6 +28,8 @@ header {
     top: 0;
     background-color: black;
     color: white;
+    display: flex;
+    justify-content: center;
 }
 header a {
     color: #bababa;
@@ -77,6 +79,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+    margin-top: 50px;
 }
 h1 {
     background: linear-gradient(rgb(255, 0, 0), rgb(255, 133, 133));

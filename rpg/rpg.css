@@ -51,6 +51,8 @@ header div:first-child {
 }
 header div:nth-child(2){
     flex-basis: content;
+    display: flex;
+    justify-content: center;
 }
 header div:last-child {
     text-align: right;
@@ -93,6 +95,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+    margin-top: 50px;
 }
 h1 {
     background: linear-gradient(rgb(255, 0, 0), rgb(255, 133, 133));

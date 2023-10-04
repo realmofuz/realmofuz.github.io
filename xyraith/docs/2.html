@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Realm of Uz</title>
+    <link rel="icon" href="/img/realm_of_uz.png">
+    <link href="../../index.css" rel="stylesheet">
+    <style>
+    .text {
+        padding-left: 100px;
+    }
+    .button {
+      background-color: rgb(105, 105, 105);
+      border-radius: 8px;
+      color: black;
+      padding: 14px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    header {
+        text-align: center;
+        padding: 3px;
+        background-color: black;
+        color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 3px;
+      background-color: rgb(98, 20, 122);
+      color: white;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 40px;
+        background-color: rgba(0, 0,0, 0.5);
+    }
+    
+    .sidebar div {
+        padding: 8px;
+        font-size: 24px;
+        display: block;
+    }
+
+    .docmid {
+        width: 50%;
+        margin-left: 25%;
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        
+        <div class="sidebar">
+            <a href="./1.html">Syntax</a>
+            <br>
+            <br>
+            <a href="./2.html">Simple Guessing Game</a>
+            <br>
+            <br>
+            <a href="./3.html">Variables</a>
+            <br>
+            <br>
+        </div>
+
+        <div class="contents">
+            <div class="docmid">
+                <h1>Simple Guessing Game</h1>
+<p>Let's code a simple game in Xyraith now. We will make a simple guessing game.</p>
+<h2>Setup Server</h2>
+<p>First, let's make a new project. Xyraith runs as a .jar, which requires Java installed to run it. To use it, make a new folder with your project and drag Xyraith.jar inside.</p>
+<p>Next, type this into the console:</p>
+<pre><code class="language-bash">java -jar Xyraith.jar
+</pre></code></pre>
+<p>This will output a list of subcommands you can run. We will use the init subcommand to initialize a project for us. Type this:</p>
+<pre><code class="language-shell">java -jar Xyraith.jar init
+</pre></code></pre>
+<p>It will create a file tree for us:</p>
+<pre><pre><code>- xyraith/
+	- main.xyr
+- worlds/
+	- default.polar
+- server.toml
+</pre></code></pre>
+<p>The xyraith subdirectory is where we will put our code when we write it. server.toml is where we can configure settings for our server. The worlds subdirectory is the folder where we store our worlds for the server. Here's the basic template:</p>
+<pre><pre><code>[server]
+port = 25565
+motd = &quot;&quot;
+</pre></code></pre>
+<p>server.toml supports these flags:</p>
+<pre><pre><code>[server]
+# Port to host it on
+port = 25565
+# Message of the day
+motd = &quot;&quot;
+
+# Settings to configure the whitelist
+# If it is enabled, it will not let on players who
+# are not whitelisted.
+[whitelist]
+# Determines whether the whitelist is enabled or not
+enabled = false
+# A list of whitelisted players
+whitelistedPlayers = []
+
+# Alternatively, if you are writing a library, do not
+# use [server]. Instead, use [package].
+[package]
+# Name of your library
+name = &quot;my-package&quot;
+# Version of your library
+version = &quot;1.0&quot;
+
+# Define a new dependency for the library / server
+[[dependency]]
+# Name of the library
+name = &quot;other-package&quot;
+# Version of the library
+version = &quot;1.0.1&quot;
+</pre></code></pre>
+<h2>Code Server</h2>
+<p>With configuration out of the way, open the main.xyr file in the xyraith/ folder. This is where we will start writing our code. The file should start off like this:</p>
+<pre><pre><code>event startup {
+	console.log &quot;Hello world!&quot;
+	world.load &quot;worlds/default.polar&quot;
+}
+</pre></code></pre>
+<p>If you were to run the server, you would see &quot;Hello world!&quot; print out in the console. If you were to join, you would see a 10x10 block grass field. However, this isn't much of a game currently.</p>
+<p>Firstly, create a new join event:</p>
+<pre><pre><code>event join {
+
+}
+</pre></code></pre>
+<p>Next, we should tell the player what they need to do. You can do this by sending a message to their chat using player.sendMessage.</p>
+<pre><pre><code>event join {
+	player.sendMessage &quot;Welcome to the guessing game! Type a number in chat to guess the number I have!&quot;
+}
+</pre></code></pre>
+<p>We can add color to the message using the MiniMessage format. So, let's give it some color.</p>
+<pre><pre><code>event join {
+	player.sendMessage &quot;&lt;gray&gt;Welcome to the &lt;white&gt;guessing game&lt;gray&gt;! Type a number in &lt;white&gt;chat &lt;gray&gt;to guess the number I have!&quot;
+}
+</pre></code></pre>
+<p>Now it's more colorful! And we highlighted the words we found important. Now let's add functionality. Let's store data on the player using player.store on the join event, storing the number they need to guess.</p>
+<pre><pre><code>player.store :number (random 1 10)
+</pre></code></pre>
+<p>What this does is it generates a random number 1 to 10, and stores it in the player under the key :number.</p>
+<p>Now, let's have them guess a number. Create a new chat event:</p>
+<pre><pre><code>event chat {
+
+}
+</pre></code></pre>
+<p>To see what they typed into chat, we will use the event.chatMessage command. We will store it in a local variable using the store command so we don't have to constantly type it. We will also store a variable with the number the player needs to guess.</p>
+<pre><pre><code>event chat {
+	store :message (event.chatMessage)
+	store :number (player.load :number)
+}
+</pre></code></pre>
+<p>Now, let's tell the player if they're right or not.</p>
+<pre><pre><code>if (equal (load :message) (load :number)) {
+	;; ...
+}
+</pre></code></pre>
+<p>You may notice something weird here. Why aren't we doing if (load :message) = (load :number)? This is because comparisons and arithmetic are commands aswell. You are used to things like 5+3, but Xyraith requires (add 5 3) to do that.</p>
+<p>It's also important to note the difference between a block and a command. A command is just a single command to run. A block is a list of commands to run. It's good practice to use parenthesis for commands, and braces for blocks. But, you can use both interchangably however you like.</p>
+<p>Now, if the player is correct, we will tell them they are and give them a new number.</p>
+<pre><pre><code>player.sendMessage &quot;&lt;lime&gt;Correct! &lt;gray&gt;Generating a new number for you...&quot;
+player.store :number (random 1 10) 
+</pre></code></pre>
+<p>Currently, if the player is incorrect, they get no feedback. Let's add some.
+Before our if statement, let's add two more.</p>
+<pre><pre><code>if (lessthan (load :message) (load :number)) {
+	player.sendMessage &quot;&lt;red&gt;Too low!&quot;
+}
+if (greaterthan (load :message) (load :number)) {
+	player.sendMessage &quot;&lt;red&gt;Too high!&quot;
+}
+</pre></code></pre>
+<p>Now you should have a functional guessing game that looks like this:</p>
+<pre><pre><code>event startup {
+	console.log &quot;Hello world!&quot;
+	world.load &quot;worlds/default.polar&quot;
+}
+
+event join {
+	player.sendMessage &quot;&lt;gray&gt;Welcome to the &lt;white&gt;guessing game&lt;gray&gt;! Type a number in &lt;white&gt;chat &lt;gray&gt;to guess the number I have!&quot;
+}
+
+event chat {
+	store :message (event.chatMessage)
+	store :number (player.load :number)
+	if (lessthan (load :message) (load :number)) {
+		player.sendMessage &quot;&lt;red&gt;Too low!&quot;
+	}
+	if (greaterthan (load :message) (load :number)) {
+		player.sendMessage &quot;&lt;red&gt;Too high!&quot;
+	}
+	if (equal (load :message) (load :number)) {
+		player.sendMessage &quot;&lt;lime&gt;Correct! &lt;gray&gt;Generating a new number for you...&quot;
+		player.store :number (random 1 10)
+	}
+}
+</pre></code></pre>
+<p>Run your server and test it out! It should all work.</p>
+
+            </div>
+        </div>
+        <br>
+        <footer>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

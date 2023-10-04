@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Realm of Uz</title>
+    <link rel="icon" href="/img/realm_of_uz.png">
+    <link href="../../index.css" rel="stylesheet">
+    <style>
+    .text {
+        padding-left: 100px;
+    }
+    .button {
+      background-color: rgb(105, 105, 105);
+      border-radius: 8px;
+      color: black;
+      padding: 14px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    header {
+        text-align: center;
+        padding: 3px;
+        background-color: black;
+        color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 3px;
+      background-color: rgb(98, 20, 122);
+      color: white;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 40px;
+        background-color: rgba(0, 0,0, 0.5);
+    }
+    
+    .sidebar div {
+        padding: 8px;
+        font-size: 24px;
+        display: block;
+    }
+
+    .docmid {
+        width: 50%;
+        margin-left: 25%;
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        
+        <div class="sidebar">
+            <a href="./1.html">Syntax</a>
+            <br>
+            <br>
+            <a href="./2.html">Simple Guessing Game</a>
+            <br>
+            <br>
+            <a href="./3.html">Variables</a>
+            <br>
+            <br>
+        </div>
+
+        <div class="contents">
+            <div class="docmid">
+                <h1>Variables</h1>
+<p>Variables in Xyraith are unique to most other languages. Most languages have a scope to each variable based on where it's declared. Xyraith has no concept of declaring variables, only setting &amp; getting them. So, it has an alternative system where you determine the scope instead.</p>
+<pre><code class="language-lisp">global.store :var 10 ;; Store in global scope
+store :var 12 ;; Store in local scope
+player.store :var 14 ;; Store on a player
+
+global.save :var ;; Make a variable persistent between VM restarts
+player.save :var ;; Same as above, but on a player
+
+parameter.store :param 10 ;; Store a function parameter
+</pre></code></pre>
+<h2>Local Scope</h2>
+<p>Local scope is only visible to the function you're currently in. When entering a new function, locals are not visible in that function you call.</p>
+<pre><code class="language-lisp">function :a { 
+	local.store :x 10
+	call :b
+}
+
+function :b {
+	local.load :x ;; ERROR: `:x` is not valid here
+}
+</pre></code></pre>
+<h2>Global Scope</h2>
+<p>Global variables are visible from everywhere.</p>
+<pre><code class="language-lisp">function :a {
+	global.store :x 10
+	call :b
+}
+
+function :b {
+	global.load :x ;; No error, `:x` is valid here.
+}
+</pre></code></pre>
+<h2>Player Scope</h2>
+<p>These variables are global &amp; specific to the targeted player(s). Attempting to load from this when multiple players are selected will get the result from the first player in the selection.</p>
+<pre><code class="language-lisp">function :a {
+	setTarget.playerName &quot;Player1&quot;
+	player.store :x 10
+	call :b
+}
+
+function :b {
+	setTarget.playerName &quot;Player1&quot;
+	player.load :x ;; VALID
+	setTarget.playerName &quot;Player2&quot;
+	player.load :x ;; ERROR: not valid here
+}
+</pre></code></pre>
+
+            </div>
+        </div>
+        <br>
+        <footer>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Realm of Uz</title>
+    <link rel="icon" href="/img/realm_of_uz.png">
+    <link href="../../index.css" rel="stylesheet">
+    <style>
+    .text {
+        padding-left: 100px;
+    }
+    .button {
+      background-color: rgb(105, 105, 105);
+      border-radius: 8px;
+      color: black;
+      padding: 14px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    header {
+        text-align: center;
+        padding: 3px;
+        background-color: black;
+        color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 3px;
+      background-color: rgb(98, 20, 122);
+      color: white;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 40px;
+        background-color: rgba(0, 0,0, 0.5);
+    }
+    
+    .sidebar div {
+        padding: 8px;
+        font-size: 24px;
+        display: block;
+    }
+
+    .docmid {
+        width: 50%;
+        margin-left: 25%;
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        
+        <div class="sidebar">
+            <a href="./1.html">Syntax</a>
+            <br>
+            <br>
+            <a href="./2.html">Simple Guessing Game</a>
+            <br>
+            <br>
+            <a href="./3.html">Variables</a>
+            <br>
+            <br>
+        </div>
+
+        <div class="contents">
+            <div class="docmid">
+                <h1>Syntax</h1>
+<p>Xyraith uses commands to dictate what to run. For example:</p>
+<pre><pre><code>(console.log &quot;Hello world!&quot;)
+</pre></code></pre>
+<p>This command would log &quot;Hello world!&quot; to the console.</p>
+<p>Each command has a name, and arguments. The name of the command is the first part of the command - in the above, it would be console.log. The rest of the commands are the arguments of the command. In this case, the arguments would be the string, &quot;Hello world!&quot;.</p>
+<p>Valid types to put in commands' arguments are:</p>
+<ul>
+<li>Strings (e.g &quot;This is a string.&quot;)</li>
+<li>Identifiers (e.g identifier_xyz)</li>
+<li>Numbers (e.g -1.27, 19, -14, 4.56)</li>
+<li>Other commands (using parenthesis, e.g (console.log (add 2 3)))</li>
+<li>Blocks (e.g { ... commands here ... })</li>
+</ul>
+<p>Xyraith puts these commands into events.</p>
+<pre><pre><code>event join {
+	player.sendMessage (string &quot;Hello &quot; (player.username))
+}
+</pre></code></pre>
+<p>This greets the player by their username when they join the server.</p>
+<p>This is it. This is all of the syntax of Xyraith. Despite how simple it looks, it is <strong>extremely</strong> powerful.</p>
+
+            </div>
+        </div>
+        <br>
+        <footer>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

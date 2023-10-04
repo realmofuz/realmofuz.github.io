@@ -14,7 +14,7 @@ def processFile(file_name: str) -> str:
                 .replace("%{{contents}}%", raw_html))
 
 def processAllFiles():
-    for index in range(1, 100000):
+    for index in range(0, 100000):
         try:
             html = processFile(f"{os.getcwd()}/xyraith/md/{index}.md")
             open(f"{os.getcwd()}/xyraith/docs/{index}.html", "w+").write(html)

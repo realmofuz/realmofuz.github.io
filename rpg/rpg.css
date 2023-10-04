@@ -1,3 +1,13 @@
+@media (orientation: portrait) {
+    header div:first-child {
+        text-align: center;
+    }
+    header div:last-child {
+        text-align: center;
+        padding-right: 0;
+    }
+}
+
 .page {
     background-color: rgb(240, 222, 175);
     color: rgb(199, 147, 4);
@@ -53,6 +63,7 @@ header div:nth-child(2){
     flex-basis: content;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 header div:last-child {
     text-align: right;

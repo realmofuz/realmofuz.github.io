@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Realm of Uz</title>
+    <link rel="icon" href="/img/realm_of_uz.png">
+    <link href="../../index.css" rel="stylesheet">
+    <style>
+    .text {
+        padding-left: 100px;
+    }
+    .button {
+      background-color: rgb(105, 105, 105);
+      border-radius: 8px;
+      color: black;
+      padding: 14px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    header {
+        text-align: center;
+        padding: 3px;
+        background-color: black;
+        color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 3px;
+      background-color: rgb(98, 20, 122);
+      color: white;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 40px;
+        background-color: rgba(0, 0,0, 0.5);
+    }
+    
+    .sidebar div {
+        padding: 8px;
+        font-size: 24px;
+        display: block;
+    }
+
+    .docmid {
+        width: 50%;
+        margin-left: 25%;
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        
+        <div class="sidebar">
+            <ul>
+                <li><a href="./0.html">Command List</a></li>
+                <li></li>
+                <li><a href="./1.html">Syntax</a></li>
+                <li><a href="./2.html">Simple Guessing Game</a></li>
+                <li><a href="./3.html">Variables</a></li>
+            </ul>
+        </div>
+
+        <div class="contents">
+            <div class="docmid">
+                <h2>console.log</h2>
+<p>Log a message to the console.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> String to print</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>add</h2>
+<p>Sum a series of numbers.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number(s)</strong> Numbers to add</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>sub</h2>
+<p>Subtract two numbers from eachother.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Left hand side</li>
+<li><strong>Number</strong> Right hand side</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>mul</h2>
+<p>Multiply a series of numbers</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number(s)</strong> Numbers to multiply</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>div</h2>
+<p>Divide two numbers</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Dividend</li>
+<li><strong>Number</strong> Divisor</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>mod</h2>
+<p>Get the modulo of two numbers.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Number to get modulo of</li>
+<li><strong>Number</strong> Number to modulo by</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>random</h2>
+<p>Generate a random number.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Minimum number</li>
+<li><strong>Number</strong> Maximum number</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>range</h2>
+<p>Generate a series of numbers.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Minimum number</li>
+<li><strong>Number</strong> Maximum number</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns List.</p>
+<h2>math.perlin</h2>
+<p>Generate a random number 0.0-1.0 based on location and seed.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Location</strong> Perlin location</li>
+<li><strong>Number</strong> Seed</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>loc</h2>
+<p>Generate a location from coordinates.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> X coordinate</li>
+<li><strong>Number</strong> Y coordinate</li>
+<li><strong>Number</strong> Z coordinate</li>
+<li>***Number** Pitch coordinate</li>
+<li>***Number** Yaw coordinate</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Location.</p>
+<h2>item</h2>
+<p>Generate a location from coordinates.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> Namespace ID</li>
+<li>***Number** Amount of item</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Item Stack.</p>
+<h2>world.setBlock</h2>
+<p>Set a block at a location.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Command</strong> Location to set the block at</li>
+<li><strong>String</strong> Block</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>world.setChatFormat</h2>
+<p>Requires <pre><code>chat</pre></code> event.
+Set a the format of the outgoing chat message.
+Use {player} to auto-fill in the player, and {message} for the message.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> Format of the message.</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>world.loadAnvilWorld</h2>
+<p>Make a world load based on region files.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> World to load</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.sendMessage</h2>
+<p>Send the player a message in chat.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> Message to send</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.sendActionBar</h2>
+<p>Send a player a message in the actionbar.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> Actionbar to send</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.sendTitle</h2>
+<p>Send a player a message through a title.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> Title to send</li>
+<li><strong>String</strong> Subtitle to send</li>
+<li>***Number** Duration</li>
+<li>***Number** Fade in time</li>
+<li>***Number** Fade out time</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.setHealth</h2>
+<p>Set a player's health.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Health to set (2 HP = 1 heart)</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.getHealth</h2>
+<p>Get a player's health.</p>
+<h3>Command Parameters</h3>
+<p>None</p>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>player.setHunger</h2>
+<p>Set a player's hunger points.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Points to set hunger to</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.getSaturation</h2>
+<p>Get a player's hunger points.</p>
+<h3>Command Parameters</h3>
+<p>None</p>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>player.setSaturation</h2>
+<p>Set a player's saturation points.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Number</strong> Points to set saturation to</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.getSaturation</h2>
+<p>Get a player's saturation points.</p>
+<h3>Command Parameters</h3>
+<p>None</p>
+<h3>Return Type</h3>
+<p>Returns Number.</p>
+<h2>player.heal</h2>
+<p>Heal a player's health.</p>
+<h3>Command Parameters</h3>
+<p>None</p>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.damage</h2>
+<p>Deal damage to a player.</p>
+<h3>Command Parameters</h3>
+<p>None</p>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.teleport</h2>
+<p>Teleport a player to a location.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Command</strong> Location to teleport</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>player.gamemode</h2>
+<p>Change a player's game mode.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>String</strong> Game mode to change to.</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>store</h2>
+<p>Set a value of a symbol in function-local scope.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Symbol</strong> Symbol to set value of</li>
+<li><strong>Any Value</strong> Value to set</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+<h2>load</h2>
+<p>Get a value of a symbol in function-local scope.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Symbol</strong> Symbol to get value of</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Any Value.</p>
+<h2>foreach</h2>
+<p>Loop through a series of items in a list.</p>
+<h3>Command Parameters</h3>
+<ul>
+<li><strong>Symbol</strong> Variable to store value in</li>
+<li><strong>List</strong> List to loop through</li>
+<li><strong>Block</strong> Code to run on each iteration</li>
+</ul>
+<h3>Return Type</h3>
+<p>Returns Null.</p>
+
+            </div>
+        </div>
+        <br>
+        <footer>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -17,18 +17,44 @@
     height: fit-content;
 
     background-size: cover;
-    overflow: hidden;
+}
+button {
+    background-color: rgb(50, 33, 158);
+    border-radius: 8px;
+    color: white;
+    padding: 14px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 header {
     width: 100%;
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky; /* i hate you safari */
+    top: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
+    background-color: black;
+    color: rgb(199, 147, 4);
 }
 header div {
     flex: 1;
+}
+header div:first-child {
+    text-align: left;
+}
+header div:nth-child(2){
+    flex-basis: content;
+}
+header div:last-child {
+    text-align: right;
+    padding-right: 10px;
 }
 a {
     color: rgb(199, 147, 4);
@@ -86,4 +112,16 @@ h2 {
 img.title-logo {
     max-width: 500px;
     width: 100%;
+}
+
+/* 
+begone, scrollbars! hello, consistency! 
+WHY does every browser do this differently?!
+*/
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

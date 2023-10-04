@@ -17,10 +17,17 @@
     height: fit-content;
 
     background-size: cover;
-    overflow: hidden;
 }
 a {
     color: #bababa;
+}
+header {
+    text-align: center;
+    position: -webkit-sticky /* i hate you safari */;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: white;
 }
 header a {
     color: #bababa;
@@ -43,7 +50,20 @@ ul {
     padding: 0;
 }
 button {
+    background-color: rgb(50, 33, 158);
+    border-radius: 8px;
+    color: white;
+    padding: 14px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 	transition-duration: 0.4s;
+}
+button.uzbrpg {
+    background-color: rgb(140, 10, 32);
 }
 button:hover {
 	background-color: rgb(168, 168, 168);
@@ -76,4 +96,16 @@ h2 {
 img.title-logo {
     max-width: 500px;
     width: 100%;
+}
+
+/* 
+begone, scrollbars! hello, consistency! 
+WHY does every browser do this differently?!
+*/
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

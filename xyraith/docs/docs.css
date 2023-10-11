@@ -49,7 +49,7 @@ sidebar a:hover {
     color: white;
 }
 
-header a[href='#'] {
+sidebar a[href='#'] {
     border-bottom: 3px solid white;
     color: white;
 }

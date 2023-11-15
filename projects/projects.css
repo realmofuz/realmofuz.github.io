@@ -38,7 +38,6 @@ header {
     color: #FFFFFF;
     flex: 0 0 content;
     font-family: sans-serif;
-    border-bottom: 1px solid #FFFFFF;
 }
 header div {
     flex: 1;

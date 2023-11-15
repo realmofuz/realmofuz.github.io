@@ -28,13 +28,33 @@ a {
     color: #bababa;
 }
 header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
     background-color: black;
-    color: white;
+    color: var(--theme-color);
+    flex: 0 0 content;
+    font-family: sans-serif;
+    border-bottom: 1px solid var(--theme-color);
+}
+header div {
+    flex: 1;
+}
+header div:first-child {
+    text-align: left;
+}
+header div:nth-child(2){
+    flex-basis: content;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    flex-basis: content;
+}
+header div:last-child {
+    text-align: right;
+    padding-right: 10px;
 }
 header a {
     color: #bababa;

@@ -35,10 +35,10 @@ header {
     justify-content: space-between;
     text-align: center;
     background-color: black;
-    color: var(--theme-color);
+    color: #FFFFFF;
     flex: 0 0 content;
     font-family: sans-serif;
-    border-bottom: 1px solid var(--theme-color);
+    border-bottom: 1px solid #FFFFFF;
 }
 header div {
     flex: 1;

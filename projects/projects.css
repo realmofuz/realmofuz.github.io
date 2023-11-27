@@ -2,7 +2,7 @@ body {
     margin: 0;
     overflow: hidden;
 }
-.page {
+.page.projects {
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/img/background.png");
     color: #fefefe;
     font-size: 36;

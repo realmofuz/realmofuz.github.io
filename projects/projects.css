@@ -2,8 +2,8 @@ body {
     margin: 0;
     overflow: hidden;
 }
-.page.projects {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/img/background.png");
+.page {
+    background-color: black;
     color: #fefefe;
     font-size: 36;
     font-family: sans-serif;
@@ -20,10 +20,27 @@ body {
 
     background-size: cover;
 }
+
 .contents {
     overflow-y: overlay;
     height: auto;
 }
+
+.zcontents {
+	background-color: black;
+	color: light-blue;
+}
+
+.scontents {
+	background-color: black;
+	color: blue;
+}
+
+.ccontents {
+	background-color: black;
+	color: red;
+}
+
 a {
     color: #bababa;
 }

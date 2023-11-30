@@ -29,16 +29,22 @@ body {
 .zcontents {
 	background-color: black;
 	color: light-blue;
+	overflow-y: overlay;
+    	height: auto;
 }
 
 .scontents {
 	background-color: black;
 	color: blue;
+	overflow-y: overlay;
+    	height: auto;
 }
 
 .ccontents {
 	background-color: black;
 	color: red;
+	overflow-y: overlay;
+    	height: auto;
 }
 
 a {

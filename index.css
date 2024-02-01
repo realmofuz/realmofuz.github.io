@@ -147,6 +147,13 @@ img.title-logo {
 	font-size: 48px;
 }
 
+.rUlnk {
+	color: #fcba03;
+}
+.xlnk {
+	color: #a100e0;
+}
+
 *::-webkit-scrollbar {
     display: block;
     width: 16px;

@@ -143,6 +143,10 @@ img.title-logo {
     width: 100%;
 }
 
+.lnks {
+	font-size: 48px;
+}
+
 *::-webkit-scrollbar {
     display: block;
     width: 16px;

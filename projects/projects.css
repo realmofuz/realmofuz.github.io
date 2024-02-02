@@ -50,6 +50,49 @@ body {
 a {
     color: #bababa;
 }
+.hedrz {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: black;
+    color: #FFFFFF;
+    flex: 0 0 content;
+    font-family: sans-serif;
+}
+.hedrz div {
+    flex: 1;
+}
+.hedrz div:first-child {
+    text-align: left;
+}
+.hedrz div:nth-child(2){
+    flex-basis: content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hedrz div:last-child {
+    text-align: right;
+    padding-right: 10px;
+}
+.hedrz a {
+    color: #bababa;
+    transition: border 200ms, color 200ms;
+    text-decoration: none;
+    padding: 2px 10px;
+    display: inline-block;
+}
+.hedrz a:hover {
+    border-bottom: 3px solid white;
+    color: white;
+}
+.hedrz a[href='#'] {
+    border-bottom: 3px solid white;
+    color: white;
+}
 header {
     width: 100%;
     display: flex;

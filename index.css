@@ -3,7 +3,7 @@ body {
     overflow: hidden;
 }
 .page {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("img/background.png");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("img/background_main_lines.png");
     color: #fefefe;
     font-size: 36;
     font-family: sans-serif;
